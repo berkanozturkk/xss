@@ -1,0 +1,41 @@
+<html>
+<head>
+</head>
+
+<script>
+function htmlEncode(string) {
+  return string.replace(/&/g, '&amp;')
+  			.replace(/</g, '&lt;')
+  			.replace(/>/g, '&gt;')
+  			.replace(/'/g, '&#39;')
+  			.replace(/"/g, '&#34;')
+  			.replace(/\//, '&#x2F;');
+}
+
+
+function searching(){
+
+var searched_value = htmlEncode(document.getElementById("searchedvalue").value);
+
+document.write("You searched for : "+searched_value);
+
+document.body.style.backgroundColor = "lightgreen";
+
+}
+
+</script>
+
+<body style="background-color:powderblue;">
+<div class="container">
+  <div class="main" id="maindiv">
+    <h2>Searching</h2>
+    <form id="form_id" method="post" name="myform">
+      <label>Search :</label>
+      <input type="text" name="searchedvalue" id="searchedvalue"/>
+      <input type="button" value="Search" id="submit" onclick="searching()"/>
+    </form>
+  </div>
+</div>
+</body>
+</html>
+
